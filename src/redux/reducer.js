@@ -1,13 +1,13 @@
 const initialState = {
-   search: []
+   repositories: {}
   }
 
   function reducer(state = initialState, action) {
     switch (action.type) {
-      case 'SET_SEARCH':
+      case 'SET_REPOSITORIES':
         return {
           ...state,
-          search: action.payload,
+          repositories: action.payload,
         }
       default:
         return state
