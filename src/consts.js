@@ -1,0 +1,5 @@
+export const API_ENDPOINT = 'http://0.0.0.0:8000'
+export const XHR_STATUS_IDLE = 'idle'
+export const XHR_STATUS_PENDING = 'pending'
+export const XHR_STATUS_REJECTED = 'rejected'
+export const XHR_STATUS_FULFILLED = 'fulfilled'

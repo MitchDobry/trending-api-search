@@ -1,0 +1,6 @@
+fetchowanie repozytoriów
+fetchowanie języków
+redux persist
+layout strony
+radio i select ustawiają parametry filtrowania: dispatch
+przycisk do sortowania: dispatch

@@ -1,15 +1,33 @@
-import React from 'react'
-import { Select } from "@chakra-ui/react"
+import React, { useEffect, useMemo } from "react";
+import { ListItem, Select } from "@chakra-ui/react";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchAllLanguages } from "../redux/languages";
+
+import { setLanguage } from '../redux/userSettings'
 
 function LanguageSelection() {
-    const [language, setLanguage] = React.useState("1")
-    return (
-        <Select placeholder="Select option" onChange={setLanguage} value={language}>
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
-      </Select>
-    )
-  }
+  const dispatch = useDispatch();
+  const languages = useSelector((state) => state.languages.entities);
 
-  export default LanguageSelection
+  const handleChange = (event) => {
+    dispatch(setLanguage(event.target.value));
+  };
+
+  const options = useMemo(
+    () =>
+      languages.map(({ urlParam, name }) => (
+        <option key={urlParam} value={urlParam}>
+          {name}
+        </option>
+      )),
+    [languages]
+  );
+
+  useEffect(() => {
+    dispatch(fetchAllLanguages());
+  }, []);
+
+  return <Select onChange={handleChange} placeholder="Select option">{options}</Select>;
+}
+
+export default LanguageSelection;
