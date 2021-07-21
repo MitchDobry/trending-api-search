@@ -9,7 +9,6 @@ function LanguageSelection() {
   const dispatch = useDispatch();
   const languages = useSelector((state) => state.languages.entities);
   const currentLanguage = useSelector((state) => state.userSettings.language)
-  console.log(currentLanguage)
   const handleChange = (event) => {
     dispatch(setLanguage(event.target.value));
   };
