@@ -1,5 +1,5 @@
 import { ChakraProvider, Grid, GridItem } from "@chakra-ui/react";
-import Dispacher from './components/Dispatcher'
+import Dispacher from "./components/Dispatcher";
 
 import RadioTime from "./components/RadioTime";
 import LanguageSelection from "./components/LanguageSelection";
@@ -7,7 +7,7 @@ import SortSwitch from "./components/SortSwitch";
 import Card from "./layout/card";
 import Header from "./layout/header";
 
-import Repositories from './components/Repositories'
+import Repositories from "./components/Repositories";
 
 function App() {
   return (
@@ -25,13 +25,8 @@ function App() {
         gap={4}
         bg="gray.50"
       >
-        <GridItem
-          gridArea="header"
-          minWidth={0}
-          overflow="hidden"
-        >
-          <Header>
-          </Header>
+        <GridItem gridArea="header" minWidth={0} overflow="hidden">
+          <Header></Header>
         </GridItem>
         <GridItem gridArea="inputs" overflow="hidden">
           <Card>
@@ -40,12 +35,7 @@ function App() {
             <SortSwitch />
           </Card>
         </GridItem>
-        <GridItem
-          gridArea="body"
-          minWidth={0}
-          w="33%"
-          overflow="hidden"
-        >
+        <GridItem gridArea="body" minWidth={0} overflow="hidden">
           <Repositories />
         </GridItem>
       </Grid>
