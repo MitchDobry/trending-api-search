@@ -8,7 +8,8 @@ import { setLanguage } from '../redux/userSettings'
 function LanguageSelection() {
   const dispatch = useDispatch();
   const languages = useSelector((state) => state.languages.entities);
-
+  const currentLanguage = useSelector((state) => state.userSettings.language)
+  console.log(currentLanguage)
   const handleChange = (event) => {
     dispatch(setLanguage(event.target.value));
   };
@@ -27,7 +28,7 @@ function LanguageSelection() {
      dispatch(fetchAllLanguages());
   },[dispatch]);
 
-  return <Select p={[2, 1]} onChange={handleChange} placeholder="Select language">{options}</Select>;
+  return <Select p={[2, 1]} onChange={handleChange} placeholder={currentLanguage ? currentLanguage : "Select language"}>{options}</Select>;
 }
 
 export default LanguageSelection;
