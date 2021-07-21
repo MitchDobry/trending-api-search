@@ -6,5 +6,5 @@ radio i select ustawiają parametry filtrowania: dispatch -- jest
 przycisk do sortowania: dispatch (gwiazdki) -- do zrobienia
 wyświetlenie zapisanych ustawień użytkownika w menu -- jest
 zrobienie komponentu do wyświetlania repozytoriów jako kafelków  -- jest
-dodanie ikonki podczas ładowania repozytoriów -- do zrobienia
+dodanie ikonki podczas ładowania repozytoriów -- jest
 

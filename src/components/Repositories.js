@@ -2,18 +2,28 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import Card from "../layout/card";
-import {
-  Text,
-  HStack,
-  Image,
-  Link,
-  VStack,
-} from "@chakra-ui/react";
+import { Text, HStack, Image, Link, VStack, Spinner } from "@chakra-ui/react";
 import { StarIcon, ExternalLinkIcon } from "@chakra-ui/icons";
-
 
 function Repositories() {
   const repos = useSelector((state) => state.repositories.entities);
+  const reposLoading = useSelector((state) => state.repositories.status);
+
+  if (reposLoading !== "fulfilled") {
+    return (
+      <Card>
+        <Spinner
+          thickness="4px"
+          speed="0.65s"
+          emptyColor="gray.200"
+          color="teal"
+          size="xl"
+          p={[2, 1]}
+          m={[2, 2]}
+        />
+      </Card>
+    );
+  }
   return repos.map((item) => (
     <Card key={item.name}>
       <VStack>
