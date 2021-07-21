@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo } from "react";
-import { ListItem, Select } from "@chakra-ui/react";
+import { Select } from "@chakra-ui/react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchAllLanguages } from "../redux/languages";
 
@@ -25,9 +25,9 @@ function LanguageSelection() {
 
   useEffect(() => {
     dispatch(fetchAllLanguages());
-  }, []);
+  },);
 
-  return <Select onChange={handleChange} placeholder="Select option">{options}</Select>;
+  return <Select p={[2, 1]} onChange={handleChange} placeholder="Select language">{options}</Select>;
 }
 
 export default LanguageSelection;

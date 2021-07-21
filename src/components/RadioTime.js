@@ -4,7 +4,11 @@ import { Radio, RadioGroup, Stack } from "@chakra-ui/react"
 function RadioTime() {
     const [value, setValue] = React.useState("1")
     return (
-      <RadioGroup onChange={setValue} value={value}>
+      <RadioGroup
+      onChange={setValue}
+      value={value}
+      p={[2, 3]}
+      >
         <Stack direction="row">
           <Radio value="1">daily</Radio>
           <Radio value="2">weekly</Radio>
