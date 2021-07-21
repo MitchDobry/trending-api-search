@@ -1,21 +1,33 @@
-import React from 'react'
-import { Radio, RadioGroup, Stack } from "@chakra-ui/react"
+import React from "react";
+import { Radio, RadioGroup, Stack } from "@chakra-ui/react";
+import { useDispatch } from "react-redux";
+
+import { setSince } from "../redux/userSettings";
+
+const SINCE_TYPE = [
+  { value: "daily", name: "Daily" },
+  { value: "weekly", name: "Weekly" },
+  { value: "monthly", name: "Monthly" },
+];
 
 function RadioTime() {
-    const [value, setValue] = React.useState("1")
-    return (
-      <RadioGroup
-      onChange={setValue}
-      value={value}
-      p={[2, 3]}
-      >
-        <Stack direction="row">
-          <Radio value="1">daily</Radio>
-          <Radio value="2">weekly</Radio>
-          <Radio value="3">monthly</Radio>
-        </Stack>
-      </RadioGroup>
-    )
-  }
+  const dispatch = useDispatch();
 
-  export default RadioTime
+  const handleChange = (event) => {
+    dispatch(setSince(event.target.value));
+  };
+
+  return (
+    <RadioGroup p={[2, 3]}>
+      <Stack direction="row">
+        {SINCE_TYPE.map((item) => (
+          <Radio onChange={handleChange} key={item.name} value={item.value}>
+            {item.name}
+          </Radio>
+        ))}
+      </Stack>
+    </RadioGroup>
+  );
+}
+
+export default RadioTime;

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const slice = createSlice({
-  name: "useSettings",
+  name: "userSettings",
   initialState: {
     language: undefined,
     since: "daily",

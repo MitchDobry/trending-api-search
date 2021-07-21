@@ -22,10 +22,10 @@ function LanguageSelection() {
       )),
     [languages]
   );
-
+// TODO sprawdić skąd się bierze undefined
   useEffect(() => {
-    dispatch(fetchAllLanguages());
-  },);
+     dispatch(fetchAllLanguages());
+  },[dispatch]);
 
   return <Select p={[2, 1]} onChange={handleChange} placeholder="Select language">{options}</Select>;
 }

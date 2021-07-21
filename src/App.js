@@ -1,13 +1,18 @@
 import { ChakraProvider, Grid, GridItem } from "@chakra-ui/react";
+import Dispacher from './components/Dispatcher'
+
 import RadioTime from "./components/RadioTime";
 import LanguageSelection from "./components/LanguageSelection";
 import SortSwitch from "./components/SortSwitch";
 import Card from "./layout/card";
 import Header from "./layout/header";
 
+import Repositories from './components/Repositories'
+
 function App() {
   return (
     <ChakraProvider>
+      <Dispacher />
       <Grid
         h="100%"
         templateAreas={`
@@ -40,7 +45,9 @@ function App() {
           minWidth={0}
           w="33%"
           overflow="hidden"
-        ></GridItem>
+        >
+          <Repositories />
+        </GridItem>
       </Grid>
     </ChakraProvider>
   );
