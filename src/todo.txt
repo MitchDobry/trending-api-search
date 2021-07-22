@@ -1,9 +1,9 @@
 fetchowanie repozytoriów -- jest
 fetchowanie języków -- jest
 redux persist -- jest
-layout strony -- jest
+layout strony -- do zrobienia
 radio i select ustawiają parametry filtrowania: dispatch -- jest
-przycisk do sortowania: dispatch (gwiazdki) -- do zrobienia
+przycisk do sortowania: dispatch (gwiazdki) -- jest
 wyświetlenie zapisanych ustawień użytkownika w menu -- jest
 zrobienie komponentu do wyświetlania repozytoriów jako kafelków  -- jest
 dodanie ikonki podczas ładowania repozytoriów -- jest
