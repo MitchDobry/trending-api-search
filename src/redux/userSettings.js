@@ -5,7 +5,7 @@ const slice = createSlice({
   initialState: {
     language: undefined,
     since: "daily",
-    sortByStars: "asc" ,
+    sortByStars: "asc",
   },
   reducers: {
     setLanguage(state, action) {
@@ -19,5 +19,5 @@ const slice = createSlice({
     },
   },
 });
-export const {setLanguage, setSince, toggleSort} = slice.actions
+export const { setLanguage, setSince, toggleSort } = slice.actions;
 export default slice.reducer;

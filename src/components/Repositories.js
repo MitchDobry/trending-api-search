@@ -10,6 +10,7 @@ import {
   VStack,
   Alert,
   AlertIcon,
+  Box,
 } from "@chakra-ui/react";
 import { StarIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import {
@@ -61,7 +62,7 @@ function Repositories() {
       return (
         <Alert status="info">
           <AlertIcon />
-          Please cośtam
+          Please whait.
         </Alert>
       );
     case XHR_STATUS_PENDING:
@@ -90,7 +91,9 @@ function Repositories() {
           return 0;
         })
         .map((repository) => (
-          <Repository key={repository.name} {...repository} />
+          <Box>
+            <Repository key={repository.name} {...repository} />
+          </Box>
         ));
     default:
       return null;

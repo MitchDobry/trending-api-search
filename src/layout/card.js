@@ -15,7 +15,9 @@ const Card = (props) => {
     >
       <Center h="auto">
         <HStack p={[3, 3]}>
-          <Flex direction={["column", "column", "row"]}>{props.children}</Flex>
+          <Flex direction={["column", "column", "row"]}>
+            {props.children}
+            </Flex>
         </HStack>
       </Center>
     </Box>

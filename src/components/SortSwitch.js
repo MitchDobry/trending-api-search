@@ -16,16 +16,18 @@ function SortSwitch() {
   const handleChange = () => dispatch(toggleSort());
 
   return (
-    <FormControl p={[2, 1]} display="flex" alignItems="center">
-      <FormLabel htmlFor="email-alerts" m={[0, 0]}>
-        Sort by stars
-      </FormLabel>
-      <RadioGroup onChange={handleChange} value={sortByStars}>
-        <Stack direction="row">
-          <Radio value="asc">ascending</Radio>
-          <Radio value="desc">descending</Radio>
-        </Stack>
-      </RadioGroup>
+    <FormControl p={[2, 1]} display="flex" alignItems="center" m={[1, 1]}>
+      <Stack direction="column">
+        <FormLabel color="gray" htmlFor="email-alerts" m={[0, 0]}>
+          Sort by stars
+        </FormLabel>
+        <RadioGroup  p={[2, 3]} onChange={handleChange} value={sortByStars}>
+          <Stack direction="row">
+            <Radio value="asc">Ascending</Radio>
+            <Radio value="desc">Descending</Radio>
+          </Stack>
+        </RadioGroup>
+      </Stack>
     </FormControl>
   );
 }

@@ -1,4 +1,4 @@
-import { ChakraProvider, Grid, GridItem } from "@chakra-ui/react";
+import { ChakraProvider, Grid, GridItem, SimpleGrid } from "@chakra-ui/react";
 import Dispacher from "./components/Dispatcher";
 
 import RadioTime from "./components/RadioTime";
@@ -20,7 +20,7 @@ function App() {
                 "inputs"
                 "body"
               `}
-        templateColumns=" 1fr"
+        templateColumns="1fr"
         templateRows="auto 1fr auto"
         gap={4}
         bg="gray.50"
@@ -30,13 +30,17 @@ function App() {
         </GridItem>
         <GridItem gridArea="inputs" overflow="hidden">
           <Card>
-            <RadioTime />
-            <LanguageSelection />
-            <SortSwitch />
+            <SimpleGrid columns={[1, null, 3]}>
+              <LanguageSelection />
+              <RadioTime />
+              <SortSwitch />
+            </SimpleGrid>
           </Card>
         </GridItem>
         <GridItem gridArea="body" minWidth={0} overflow="hidden">
-          <Repositories />
+          <SimpleGrid columns={[1, null, 4]}>
+            <Repositories />
+          </SimpleGrid>
         </GridItem>
       </Grid>
     </ChakraProvider>
