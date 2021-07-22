@@ -12,10 +12,8 @@ const SINCE_TYPE = [
 
 
 function RadioTime() {
-  console.log(setSince)
   const dispatch = useDispatch();
    const currentSinceType = useSelector((state) => state.userSettings.since)
-  console.log(currentSinceType)
 
   const handleChange = (event) => {
     dispatch(setSince(event.target.value));

@@ -8,12 +8,8 @@ export const fetchAllRepositories = createAsyncThunk(
         .filter((key) => (obj[key]))
         .map((key) => (`${key}=${obj[key]}`))
         .join('&')
-    try {
       const response = await fetch(API_ENDPOINT + '?' + params )
       return response.json()
-    } catch (error) {
-      return error
-    }
   }
 )
 

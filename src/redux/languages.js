@@ -4,12 +4,8 @@ import { API_ENDPOINT, XHR_STATUS_IDLE, XHR_STATUS_PENDING, XHR_STATUS_REJECTED,
 export const fetchAllLanguages = createAsyncThunk(
   'language',
   async () => {
-    try {
-      const response = await fetch(API_ENDPOINT + '/languages')
-      return response.json()
-    } catch (error) {
-      return error
-    }
+    const response = await fetch(API_ENDPOINT + '/languages')
+    return response.json()
   }
 )
 
